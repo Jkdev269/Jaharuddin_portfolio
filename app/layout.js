@@ -22,11 +22,11 @@ export const metadata = {
     icon: "/favicon.ico", // or "/favicon.png"
   },
   creator: "Jaharuddin",
-  metadataBase: new URL("https://your-portfolio-link.com"), // optional
+  metadataBase: new URL("https://jaharuddinportfolio-one.vercel.app/"), // optional
   openGraph: {
     title: "Jaharuddin | MERN Stack Developer",
     description: "Explore Jaharuddin's portfolio projects, skills, and contact information.",
-    url: "https://your-portfolio-link.com",
+    url: "https://jaharuddinportfolio-one.vercel.app/",
     siteName: "Jaharuddin Portfolio",
     images: [
       {
