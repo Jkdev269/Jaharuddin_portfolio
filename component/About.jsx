@@ -1,6 +1,6 @@
 export default function About({ isDarkMode }) {
   return <>
-          {/* About Me Section */}
+          
     <section id="about" className="mb-16 px-4 sm:px-0">
       <h2 className={`text-3xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-black'}`}>
         About Me

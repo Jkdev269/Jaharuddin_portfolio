@@ -14,10 +14,10 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '/snippets' },
-    { name: 'Skills', href: '/resources' },
-    { name: 'Contact', href: '/projects' }
+    { name: 'About', href: '/about' },
+    { name: 'Projects', href: '/project' },
+    { name: 'Skills', href: '/skill' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   // Separate always-visible and hamburger-only links
@@ -25,7 +25,11 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
   const dropdownLinks = navLinks.filter((link) => !alwaysVisible.includes(link.name));
 
   return (
-    <nav className="sticky-nav flex flex-col sm:flex-row justify-between items-start sm:items-center max-w-4xl w-full p-6 mt-0 mb-0 md:mt-4 md:mb-10 mx-auto dark:bg-zinc-900 bg-opacity-60">
+    <nav className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row justify-between items-start sm:items-center max-w-4xl w-full p-6 mx-auto backdrop-blur-md border-b transition-colors duration-200 ${
+        isDarkMode 
+          ? 'bg-black border-gray-700/20' 
+          : 'bg-white/95 border-gray-200/20'
+      }`}>
       <Link href="#skip" className="sr-only focus:not-sr-only">
         Skip to content
       </Link>
@@ -60,7 +64,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
         </button>
 
         {/* Mobile: Home + Projects + Hamburger */}
-        <div className="block sm:hidden  flex-row items-center space-x-2 ml-4">
+        <div className="flex sm:hidden flex-row items-center space-x-2 ml-4">
           {navLinks
             .filter((link) => alwaysVisible.includes(link.name))
             .map((link) => {
@@ -76,14 +80,18 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
                   }`}
                 >
                   <span
-                    className={`group-hover:text-blue-500 ${
+                    className={`group-hover:text-blue-500 transition-colors duration-200 ${
                       isDarkMode ? 'text-gray-100' : 'text-gray-700'
                     }`}
                   >
                     {link.name}
                   </span>
                   {isActive && (
-                    <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+                    <span className={`absolute inset-x-1 -bottom-px h-px bg-gradient-to-r transition-colors duration-200 ${
+                      isDarkMode 
+                        ? 'from-blue-400/0 via-blue-400/40 to-blue-400/0' 
+                        : 'from-blue-500/0 via-blue-500/40 to-blue-500/0'
+                    }`}></span>
                   )}
                 </Link>
               );
@@ -125,7 +133,7 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
             <Link
               key={link.name}
               href={link.href}
-              className={`group  relative rounded-lg px-3 inline-block py-2 text-sm transition-all delay-150 ${
+              className={`group relative rounded-lg px-3 inline-block py-2 text-sm transition-all delay-150 ${
                 isDarkMode
                   ? 'text-gray-200 hover:text-white'
                   : 'text-gray-700 hover:text-black'
@@ -140,7 +148,11 @@ export default function Navbar({ isDarkMode, toggleDarkMode }) {
               </span>
 
               {isActive && (
-                <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+                <span className={`absolute inset-x-1 -bottom-px h-px bg-gradient-to-r transition-colors duration-200 ${
+                  isDarkMode 
+                    ? 'from-blue-400/0 via-blue-400/40 to-blue-400/0' 
+                    : 'from-blue-500/0 via-blue-500/40 to-blue-500/0'
+                }`}></span>
               )}
             </Link>
           );
