@@ -66,7 +66,7 @@ export default function Contact() {
         }`}
       >
         Have a project in mind, a collaboration idea, or just want to say hello?
-        I'm always open to new opportunities, freelance work, or just tech
+        I&apos;m always open to new opportunities, freelance work, or just tech
         conversations. Feel free to reach out — I’ll get back to you as soon as
         possible! 📧 Email: jaharuddin269@gmail.com
       </p>
@@ -82,10 +82,10 @@ export default function Contact() {
             isDarkMode ? "text-gray-100" : "text-gray-900"
           }`}
         >
-          I'm currently looking for a full-time job in MERN Stack Development.
+          I&apos;m currently looking for a full-time job in MERN Stack Development.
         </h5>
         <p className={`my-1 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
-          Let's connect and discuss how I can add value to your team.
+          Let&apos;s connect and discuss how I can add value to your team.
         </p>
         <a
           href="https://wa.me/918808761375?text=I want to work on a project with you"

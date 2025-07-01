@@ -1,4 +1,4 @@
-// component/Footer.js
+
 import Link from "next/link";
 
 const ExternalLink = ({ href, children, isDarkMode }) => (
